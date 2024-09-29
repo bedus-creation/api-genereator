@@ -21,7 +21,7 @@ class OpenAPI
 
     public static function init(): static
     {
-        $api  = file_get_contents(base_path('src/Domain/api.json'));
+        $api = file_get_contents(base_path('src/Domain/api.json'));
         $JSON = json_decode($api, true);
 
         return OpenAPI::fromJson($JSON);
@@ -70,12 +70,12 @@ class OpenAPI
     public function toJsonFormat(): array
     {
         return [
-            'openapi'    => $this->openapi,
-            'info'       => $this->info->toJsonFormat(),
-            'servers'    => $this->servers->map->toJsonFormat()->toArray(),
-            'tags'       => $this->tags->map->toJsonFormat()->toArray(),
+            'openapi' => $this->openapi,
+            'info' => $this->info->toJsonFormat(),
+            'servers' => $this->servers->map->toJsonFormat()->toArray(),
+            'tags' => $this->tags->map->toJsonFormat()->toArray(),
             'components' => $this->component->toJsonFormat(),
-            'paths'      => $this->pathFactory->toJsonFormat(),
+            'paths' => $this->pathFactory->toJsonFormat(),
         ];
     }
 

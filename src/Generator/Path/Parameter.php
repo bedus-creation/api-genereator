@@ -13,8 +13,7 @@ class Parameter extends Data
         public ?bool $required,
         public string $in,
         public ParameterSchema $schema,
-    ) {
-    }
+    ) {}
 
     public static function fromJson(array $json): Parameter
     {
@@ -36,11 +35,11 @@ class Parameter extends Data
     public function toJsonFormat(): array
     {
         return array_filter([
-            'name'         => $this->name,
-            'description'  => $this->description,
-            'required'     => $this->required,
-            'in'           => $this->in,
-            'schema'       => $this->schema->toJsonFormat(),
+            'name' => $this->name,
+            'description' => $this->description,
+            'required' => $this->required,
+            'in' => $this->in,
+            'schema' => $this->schema->toJsonFormat(),
         ]);
     }
 }

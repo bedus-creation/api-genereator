@@ -16,7 +16,7 @@ class PathFactory
             ->mapWithKeys(function ($path, $url) {
                 return collect($path)->mapWithKeys(function ($path, $method) use ($url) {
                     $path['method'] = $method;
-                    $path['url']    = $url;
+                    $path['url'] = $url;
 
                     return [$url.'-'.$method => EndPoint::fromJson($path)];
                 });

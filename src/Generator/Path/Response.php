@@ -19,7 +19,7 @@ class Response
     {
         return array_filter([
             'description' => $this->description,
-            'content'     => $this->content->mapWithKeys(function (RequestContent $content) {
+            'content' => $this->content->mapWithKeys(function (RequestContent $content) {
                 return $content->toJsonFormat();
             })->toArray(),
         ]);
@@ -29,7 +29,7 @@ class Response
     {
         $content = Arr::get($json, 'content') ?? [];
         $content = collect($content)
-            ->map(fn($item, $key) => new RequestContent(
+            ->map(fn ($item, $key) => new RequestContent(
                 type: $key,
                 ref: Arr::get($item, 'schema.$ref') ?? '',
             ))->values();

@@ -58,7 +58,7 @@ trait HasResponse
             $schema['properties'] = $this->processResponse();
         }
 
-        $example =$this->response->json() ?? [];
+        $example = $this->response->json() ?? [];
         if (! empty($example)) {
             $schema['example'] = $example;
         }

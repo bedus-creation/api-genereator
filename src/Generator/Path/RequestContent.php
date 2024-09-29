@@ -15,8 +15,8 @@ class RequestContent
             $this->type => [
                 'schema' => [
                     'refs' => $this->ref,
-                ]
-            ]
+                ],
+            ],
         ];
     }
 }

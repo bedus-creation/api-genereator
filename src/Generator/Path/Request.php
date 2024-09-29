@@ -17,7 +17,7 @@ class Request
     public static function fromJson(array $json): Request
     {
         $content = Arr::get($json, 'content') ?? [];
-        $content = collect($content)->map(fn($item, $key) => new RequestContent(
+        $content = collect($content)->map(fn ($item, $key) => new RequestContent(
             type: $key,
             ref: Arr::get($item, 'schema.$ref') ?? '',
         ))->values();

@@ -2,6 +2,4 @@
 
 namespace JoBins\APIGenerator\Parser;
 
-class ParseRequest
-{
-}
+class ParseRequest {}

@@ -24,7 +24,7 @@ class EndPoint extends Data
         public Collection $responses,
     ) {}
 
-    public static function fromRequestResponse( $request, $response): self
+    public static function fromRequestResponse($request, $response): self
     {
         dd($request, $response);
     }
@@ -62,15 +62,15 @@ class EndPoint extends Data
     public function toJsonFormat(): array
     {
         return array_filter([
-            'tags'        => $this->tags,
-            'summary'     => $this->summary,
+            'tags' => $this->tags,
+            'summary' => $this->summary,
             'description' => $this->description,
             'operationId' => $this->operationId,
             'requestBody' => $this->request?->toJsonFormat(),
-            'responses'   => $this->responses->mapWithKeys(function (Response $response) {
+            'responses' => $this->responses->mapWithKeys(function (Response $response) {
                 return [$response->statusCode => $response->toJsonFormat()];
             })->toArray(),
-            'parameters'  => $this->parameters->map->toJsonFormat()->toArray(),
+            'parameters' => $this->parameters->map->toJsonFormat()->toArray(),
         ]);
     }
 }

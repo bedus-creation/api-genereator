@@ -12,7 +12,7 @@ class ParameterSchema
     public function toJsonFormat(): array
     {
         return array_filter([
-            'type'   => $this->type,
+            'type' => $this->type,
             'format' => $this->format,
         ]);
     }

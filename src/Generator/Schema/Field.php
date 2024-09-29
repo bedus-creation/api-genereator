@@ -19,19 +19,19 @@ class Field extends Data
     public static function fromJson(array $field, string $name, bool $required): static
     {
         return Field::from([
-            'name'        => $name,
+            'name' => $name,
             'description' => Arr::get($field, 'description'),
-            'format'      => Arr::get($field, 'format'),
-            'type'        => Arr::get($field, 'type'),
-            'required'    => $required,
+            'format' => Arr::get($field, 'format'),
+            'type' => Arr::get($field, 'type'),
+            'required' => $required,
         ]);
     }
 
     public function toJsonFormat(): array
     {
         return array_filter([
-            'type'        => $this->type,
-            'format'      => $this->format,
+            'type' => $this->type,
+            'format' => $this->format,
             'description' => $this->description,
         ]);
     }

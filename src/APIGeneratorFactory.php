@@ -5,6 +5,4 @@ namespace JoBins\APIGenerator;
 /**
  * Class APIGeneratorFactory
  */
-class APIGeneratorFactory
-{
-}
+class APIGeneratorFactory {}
