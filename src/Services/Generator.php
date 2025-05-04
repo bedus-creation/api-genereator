@@ -15,11 +15,11 @@ use JoBins\APIGenerator\Security\HasServer;
  */
 class Generator
 {
-    use ProcessRequestTrait;
     use HasParameter;
-    use HasSecurity;
     use HasResponse;
+    use HasSecurity;
     use HasServer;
+    use ProcessRequestTrait;
 
     protected array $data = [];
 
